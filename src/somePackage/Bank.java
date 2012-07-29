@@ -39,7 +39,7 @@ public class Bank {
     public void setAll() throws SQLException {
         info = new JDBCConn(Integer.parseInt(account));
         id = info.getId();
-        age = info.getAge();
+        age = info.getAge(); // interesting
         name = info.getName();
         lName = info.getLastName();
         gpa = info.getGpa();
