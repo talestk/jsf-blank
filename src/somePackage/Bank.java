@@ -4,10 +4,8 @@
  */
 package somePackage;
 
-import java.io.Serializable;
 import java.sql.SQLException;
-import javax.faces.bean.*;
-import sun.tools.tree.ThisExpression;
+import javax.faces.bean.ManagedBean;
 
 /**
  *
@@ -17,6 +15,15 @@ import sun.tools.tree.ThisExpression;
 
 public class Bank {
     private String account;
+    private String password;
+    
+    public String getPassword() {
+        return (password);
+    }
+    
+    public void setPassword(String password) {
+        this.password = password.trim();
+    }
     
     public String getAccount() {
         return (account);
@@ -27,41 +34,27 @@ public class Bank {
     }
     
     public String showBalance() throws SQLException {
-        setAll();
+        return setAll(password);
+    }
+    
+    private static JDBCConnLogin login;
+    private static int balance;
+    
+    public String setAll(String sqlPass) throws SQLException {
+        login = new JDBCConnLogin(account, password, sqlPass);
+        balance = login.getBalance();
+        if (login.getPassword() == null ? password != null : !login.getPassword().equals(password)) {
+            return "wrongPassword";
+        }
         return "balance";
     }
+
     
-    public static JDBCConn info;
-    public static int id, age;
-    public static String name, lName;
-    public static float gpa;
-    
-    public void setAll() throws SQLException {
-        info = new JDBCConn(Integer.parseInt(account));
-        id = info.getId();
-        age = info.getAge(); // interesting
-        name = info.getName();
-        lName = info.getLastName();
-        gpa = info.getGpa();
+    public int getBalance() {
+        return balance;
     }
     
-    public int getId() {
-        return id;
-    }
-    
-    public int getAge() {
-        return age;
-    }
-    
-    public String getName() {
-        return name;
-    }
-    
-    public String getLastName() {
-        return lName;
-    }
-    
-    public float getGpa() {
-        return gpa;
+    public String wrongPassword() {
+        return "wrongPassword";
     }
 }

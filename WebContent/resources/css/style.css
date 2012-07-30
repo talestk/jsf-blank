@@ -24,11 +24,39 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	color: #464646;
+        text-align: center;
 }
+/* Wrong Password CSS **/
+#wrongMSGHeader {
+
+        margin: 0 auto;
+        color: white;
+        font-size: 18px;
+        text-align: center;
+        padding: 30px 20px 0px 20px; 
+        
+}
+
+#wrongMSG {
+
+        margin: 0 auto;
+        font-size: 13px;
+        text-align: center;
+        padding: 30px 20px 0px 20px;
+}
+
+#backbutton {
+        width: 940px;
+        height: 110px;
+        margin: 0 auto;
+        font-size: 13px;
+        text-align: center;
+        padding: 30px 20px 0px 20px; 
+}
+/* ENd of Wrong password */
 
 h1, h2, h3 {
 	margin: 0;
-	text-transform: uppercase;
 	font-weight: normal;
 	color: #549900;
 }
@@ -226,14 +254,24 @@ hr {
 	float: left;
 }
 
-#search-text {
+#account-text {
 	width: 174px;
-	height: 18px;
+	height: 14px;
 	padding: 2px 0 2px 5px;
 	border: none;
 	background: #EFEFDF;
 	color: #000000;
 }
+
+#password-text {
+	width: 174px;
+	height: 14px;
+	padding: 2px 0 2px 5px;
+	border: none;
+	background: #EFEFDF;
+	color: #000000;
+}
+
 
 #search-submit {
 	width: 70px;
@@ -269,6 +307,26 @@ hr {
 	text-shadow: 1px 1px 4px #BC2A00;
 	font-family: Georgia, "Times New Roman", Times, serif;
 	font-size: 30px;
+	font-style: italic;
+	color: #FFFFFF;
+}
+
+#splash a {
+	margin: 0px;
+	padding: 50px 30px;
+	text-shadow: 1px 1px 4px #BC2A00;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 30px;
+	font-style: italic;
+	color: #FFFFFF;
+}
+
+#splash small {
+	margin: 0px;
+	padding: 50px 30px;
+	text-shadow: 1px 1px 4px #BC2A00;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 15px;
 	font-style: italic;
 	color: #FFFFFF;
 }
@@ -425,7 +483,6 @@ hr {
 	margin: 0px 0px 0px 0px;
 	padding: 0px 0px 20px 0px;
 	letter-spacing: -1px;
-	text-transform: lowercase;
 	font-size: 28px;
 	font-weight: normal;
 	color: #FFFFFF;

@@ -23,11 +23,14 @@
  menu and picture 
 </div>
 </h:body>-->
+<body>
 <div id="splash">
     <div class="col1"><img src="images/lastdayshi 130.jpg" width="660" height="300" alt="" />
     </div>
     <div class="col2">
-        <blockquote>&#8220;Our goal is to make you happy!&#8221;</blockquote>
+        <blockquote>&#8220;Great power comes with great responsibility!&#8221;</blockquote>
+        <small>Uncle Ben</small>
+        
     </div>
 </div>
 <div id="header">
@@ -41,10 +44,12 @@
     </div>
     
     <div id="search">
-            <h:form method="get" action=""> 
+            <h:form> 
                     <fieldset>
-                        <h:inputText id="search-text" size="15" value='#{bank.account}'/>
-                        <h:commandButton id="search-submit" value="Account" action="#{bank.showBalance()}"/>
+                        <h:inputText id="account-text" size="15" value='#{bank.account}'/>
+                        <h:inputSecret id="password-text" size="15" value='#{bank.password}'/>
+                        <h:commandButton id="search-submit" value="Login" action="#{bank.showBalance()}"/>
+                        
                     </fieldset>
             </h:form>
     </div>
@@ -74,8 +79,8 @@
 		<div id="sidebar">
 			<ul>
 				<li>
-					<h2>Aliquam tempus</h2>
-					<p>Mauris vitae nisl nec metus placerat perdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in consectetuer hendrerit, volutpat.</p>
+					<h2>Tales Takemiya</h2>
+					<p>Was born in December 4th, 1986, Sao Paulo-Brazil.</p>
 				</li>
 				<li>
 					<h2>Pellenteque ornare </h2>
@@ -97,5 +102,5 @@
 	</div>
     
 
-
+</body>
 </html>
