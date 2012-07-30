@@ -2,9 +2,10 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html">
-<h:head><title>JSF 2.0: Blank Starting-Point Project</title>
+    <h:outputStylesheet library="css" name="style.css"  />
+<h:head><title>Tales Takemiya Web Page</title>
 </h:head>
-<h:body>
+<!--<h:body>
 <div align="center">
 <h1>JSF 2.0: Bank Project</h1>
 <p>
@@ -13,13 +14,88 @@
 <fieldset>
 <legend>JSF Bank Form</legend>
 <h:form>
-      <h:inputText value="#{bank.account}"/>
-      <h:commandButton value="Go" action="#{bank.showBalance}"/>
 </h:form>
 </fieldset>
 <p>This Project is to use ManagedBeans to return values and use setters 
     and getters</p>
 <hr/>
 
+ menu and picture 
+</div>
+</h:body>-->
+<div id="splash">
+    <div class="col1"><img src="images/lastdayshi 130.jpg" width="660" height="300" alt="" />
+    </div>
+    <div class="col2">
+        <blockquote>&#8220;Our goal is to make you happy!&#8221;</blockquote>
+    </div>
+</div>
+<div id="header">
+    <div id="menu">
+        <ul>
+            <li class="current_page_item"><a href="#" class="first">Homepage</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    
+    <div id="search">
+            <h:form method="get" action=""> 
+                    <fieldset>
+                        <h:inputText id="search-text" size="15" value='#{bank.account}'/>
+                        <h:commandButton id="search-submit" value="Account" action="#{bank.showBalance()}"/>
+                    </fieldset>
+            </h:form>
+    </div>
+</div>
+<!-- END OF MENU -->
 
-</div></h:body></html>
+<!-- PAGE -->
+	<div id="page">
+		<div id="content">
+		  <div class="post">
+				<h2 class="title"><a href="#">Welcome to Street Clock </a></h2>
+				<p class="meta">Sunday, April 26, 2011 7:27 AM Posted by <a href="#">Someone</a></p>
+				<div class="entry">
+					<p>This is <strong>Street Clock </strong>, a free, fully standards-compliant CSS template designed by <a href="http://www.freecsstemplates.org">FCT</a>, released for free under the <a href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5</a> license.  Photo used in this template is form <a href="http://www.pdphoto.org">PDPhoto.org</a>. You're free to use this template for anything as long as you link back to <a href="http://www.freecsstemplates.org/">my site</a>. Enjoy :)</p>
+					<p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in felis. </p>
+			</div>
+		  </div>
+			<div class="post">
+				<h2 class="title"><a href="#">Lorem ipsum sed aliquam</a></h2>
+				<p class="meta">Sunday, April 26, 2011 7:27 AM Posted by <a href="#">Someone</a></p>
+				<div class="entry">
+					<p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec   consectetuer. Donec ipsum. Proin imperdiet est. Phasellus <a href="#">dapibus semper urna</a>. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros.</p>
+				</div>
+			</div>
+			
+		</div><!-- end #content -->
+		<div id="sidebar">
+			<ul>
+				<li>
+					<h2>Aliquam tempus</h2>
+					<p>Mauris vitae nisl nec metus placerat perdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in consectetuer hendrerit, volutpat.</p>
+				</li>
+				<li>
+					<h2>Pellenteque ornare </h2>
+					<ul>
+						<li><a href="#">Nec metus sed donec</a></li>
+						<li><a href="#">Magna lacus bibendum mauris</a></li>
+						<li><a href="#">Velit semper nisi molestie</a></li>
+						<li><a href="#">Eget tempor eget nonummy</a></li>
+						<li><a href="#">Nec metus sed donec</a></li>
+						<li><a href="#">Velit semper nisi molestie</a></li>
+						<li><a href="#">Eget tempor eget nonummy</a></li>
+						<li><a href="#">Nec metus sed donec</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+    
+
+
+</html>
