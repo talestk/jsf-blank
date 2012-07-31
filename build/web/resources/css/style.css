@@ -27,6 +27,18 @@ body {
         text-align: center;
 }
 /* Wrong Password CSS **/
+
+/* inputText posts */
+
+.post_box {
+    height: 50px;
+    width: 300px;
+}
+
+.post_title {
+    width: 300px;
+}
+
 #wrongMSGHeader {
 
         margin: 0 auto;
@@ -367,7 +379,6 @@ hr {
 .post .title a {
 	letter-spacing: -2px;
 	text-decoration: none;
-	text-transform: lowercase;
 	font-size: 38px;
 	color: #FFFFFF;
 }

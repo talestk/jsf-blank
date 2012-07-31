@@ -34,14 +34,14 @@ public class Bank {
     }
     
     public String showBalance() throws SQLException {
-        return setAll(password);
+        return setAll();
     }
     
     private static JDBCConnLogin login;
     private static int balance;
     
-    public String setAll(String sqlPass) throws SQLException {
-        login = new JDBCConnLogin(account, password, sqlPass);
+    public String setAll() throws SQLException {
+        login = new JDBCConnLogin(account);
         balance = login.getBalance();
         if (login.getPassword() == null ? password != null : !login.getPassword().equals(password)) {
             return "wrongPassword";

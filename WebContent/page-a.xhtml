@@ -60,20 +60,19 @@
 	<div id="page">
 		<div id="content">
 		  <div class="post">
-				<h2 class="title"><a href="#">Welcome to Street Clock </a></h2>
-				<p class="meta">Sunday, April 26, 2011 7:27 AM Posted by <a href="#">Someone</a></p>
+				<h2 class="title"><a href="#">#{posts.getTitle()} </a></h2>
+				<p class="meta">#{posts.getDate()} Posted by <a href="#">#{posts.getName()}</a></p>
 				<div class="entry">
-					<p>This is <strong>Street Clock </strong>, a free, fully standards-compliant CSS template designed by <a href="http://www.freecsstemplates.org">FCT</a>, released for free under the <a href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5</a> license.  Photo used in this template is form <a href="http://www.pdphoto.org">PDPhoto.org</a>. You're free to use this template for anything as long as you link back to <a href="http://www.freecsstemplates.org/">my site</a>. Enjoy :)</p>
-					<p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in felis. </p>
+					<p>#{posts.getPost()}</p>
 			</div>
 		  </div>
-			<div class="post">
-				<h2 class="title"><a href="#">Lorem ipsum sed aliquam</a></h2>
-				<p class="meta">Sunday, April 26, 2011 7:27 AM Posted by <a href="#">Someone</a></p>
+		  <div class="post">
+				<h2 class="title"><a href="#">#{posts.getTitle()} </a></h2>
+				<p class="meta">#{posts.getDate()} Posted by <a href="#">#{posts.getName()}</a></p>
 				<div class="entry">
-					<p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec   consectetuer. Donec ipsum. Proin imperdiet est. Phasellus <a href="#">dapibus semper urna</a>. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros.</p>
-				</div>
+					<p>#{posts.getPost()}</p>
 			</div>
+		  </div>
 			
 		</div><!-- end #content -->
 		<div id="sidebar">

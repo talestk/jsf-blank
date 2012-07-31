@@ -6,13 +6,16 @@ package somePackage;
 
 import java.sql.*;
  
-public class JDBCConnLogin {
-    private static String password;
+public class JDBCConnPosts {
     private static int balance;
+    private static String title;
+    private static String post;
+    private static Date date;
+    private static String name;
     
  
-	public JDBCConnLogin(String id) throws SQLException {
- 
+	public JDBCConnPosts() throws SQLException {
+                
 		System.out.println("-------- MySQL JDBC Connection Testing ------------");
  
 		try {
@@ -30,7 +33,7 @@ public class JDBCConnLogin {
 		System.out.println("MySQL JDBC Driver Registered!");
 		Connection connection = null;
                 PreparedStatement ps = null;
-                String query = "SELECT * FROM users WHERE id = ?";
+                String query = "SELECT * FROM posts ORDER BY date;";
                 ResultSet rs = null;
  
 		try {
@@ -38,21 +41,25 @@ public class JDBCConnLogin {
 					.getConnection("jdbc:mysql://localhost:3306/ttakemiya",
 							"tales", "testing");
                     ps = connection.prepareStatement(query);
-                    ps.setString(1, id);
+                    //ps.setString(1, id);
                     rs = ps.executeQuery();
                         
                     while (rs.next()) { // process results one row at a time
                         // settting variables for storing table contents
-                        String pass = rs.getString(2);
-                        int newBalance = rs.getInt(3);
-                        setBalance(newBalance);
-                        setPassword(pass);
+                        String newTitle = rs.getString(4);
+                        Date newDate = rs.getDate(3);
+                        String newPost = rs.getString(2);
+                        String newName = rs.getString(1);
+                        
+                      //  PostsDB post1 = new PostsDB(newName, newPost, newDate, newTitle);
+                        
+                       // setBalance(newBalance);
+                        setTitle(newTitle);
+                        setPost(newPost);
+                        setDate(newDate);
+                        setName(newName);
 
                     }
-                        
-                        
-                      
-                        
                         
  
 		} catch (SQLException e) {
@@ -72,23 +79,40 @@ public class JDBCConnLogin {
         
         
       // SETTERS
-
-    private void setBalance(int balance) {
-        JDBCConnLogin.balance = balance;
-    }
     
       // GETTERS
-     
-    public int getBalance() {
-        return balance;
-    }
 
-    private void setPassword(String pass) {
-        JDBCConnLogin.password = pass;
+
+    private void setTitle(String title) {
+        JDBCConnPosts.title = title;
     }
     
-    public String getPassword() {
-        return password;
+    public String getTitle() {
+        return title;
+    }
+    
+    private void setPost(String post) {
+        JDBCConnPosts.post = post;
+    }
+    
+    public String getPost() {
+        return post;
+    }
+
+    private void setDate(Date newDate) {
+        JDBCConnPosts.date = newDate;
+    }
+    
+    public Date getDate() {
+        return date;
+    }
+    
+    private void setName(String newName) {
+        JDBCConnPosts.name = newName;
+    }
+    
+    public String getName() {
+        return name;
     }
 
 }
