@@ -6,6 +6,7 @@ package somePackage;
 
 import java.sql.Date;
 import java.sql.SQLException;
+import javax.faces.bean.ManagedBean;
 
 /**
  *
@@ -26,7 +27,7 @@ public class PostsList {
     }
     
     //this is to know how many posts on the list
-    PostsDB get(int index) {
+    public PostsDB get(int index) {
         return posts.get(index);
     }
     

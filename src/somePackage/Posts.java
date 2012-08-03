@@ -4,7 +4,6 @@
  */
 package somePackage;
 
-import com.sun.org.apache.xml.internal.resolver.helpers.Namespaces;
 import java.sql.Date;
 import java.sql.SQLException;
 import javax.faces.bean.ManagedBean;
@@ -21,7 +20,7 @@ public class Posts {
     private static String post = null;
     private static Date date = null;
     private static String name = null;
-    private String id = "tales";
+   
     
     public String setAllPosts(int number) throws SQLException {
         posts = new JDBCConnPosts();
@@ -63,7 +62,6 @@ public class Posts {
         name = setAllPosts(4);
         return name;
     }
-    
     
     
 }

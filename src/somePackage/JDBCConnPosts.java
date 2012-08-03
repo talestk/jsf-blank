@@ -5,8 +5,10 @@
 package somePackage;
 
 import java.sql.*;
+import java.util.List;
  
 public class JDBCConnPosts {
+//    List<PostsArray> listOfPosts = new ArrayList<PostsArray>();
     private static int balance;
     private static String title;
     private static String post;
@@ -44,14 +46,18 @@ public class JDBCConnPosts {
                     //ps.setString(1, id);
                     rs = ps.executeQuery();
                         
-                    while (rs.next()) { // process results one row at a time
+                    
+                    while(rs.next()) {  // process results one row at a time
                         // settting variables for storing table contents
                         String newTitle = rs.getString(4);
                         Date newDate = rs.getDate(3);
                         String newPost = rs.getString(2);
                         String newName = rs.getString(1);
+//                        PostsArray ob = new PostsArray(newName, newPost, newDate, newTitle);
+//                        listOfPosts.add(ob);
                         
-                      //  PostsDB post1 = new PostsDB(newName, newPost, newDate, newTitle);
+                        
+                        //PostsArray list = new PostsList(newName, newPost, newDate, newTitle);
                         
                        // setBalance(newBalance);
                         setTitle(newTitle);
@@ -59,8 +65,8 @@ public class JDBCConnPosts {
                         setDate(newDate);
                         setName(newName);
 
-                    }
-                        
+                    
+                }
  
 		} catch (SQLException e) {
 			System.out.println("Connection Failed! Check output console");
