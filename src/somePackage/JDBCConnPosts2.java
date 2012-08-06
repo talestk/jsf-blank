@@ -35,7 +35,7 @@ public class JDBCConnPosts2 {
 		System.out.println("MySQL JDBC Driver Registered!");
 		Connection connection = null;
                 PreparedStatement ps = null;
-                String query = "SELECT * FROM posts ORDER BY date DESC limit 2;";
+                String query = "SELECT * FROM posts ORDER BY id DESC limit 2;";
                 ResultSet rs = null;
  
 		try {
@@ -76,7 +76,7 @@ public class JDBCConnPosts2 {
                 
                 connection.close();
 		if (connection != null) {
-			System.out.println("You made it, take control your database now!");
+			System.out.println("Connection from Post2 Done!");
 		} else {
 			System.out.println("Failed to make connection!");
 		}

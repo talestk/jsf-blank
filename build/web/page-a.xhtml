@@ -37,25 +37,15 @@
     <div id="menu">
         <ul>
             <li class="current_page_item"><a href="#" class="first">Homepage</a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="login.jsf">Login</a></li>
+            <li><a href="about.jsf">About</a></li>
+            <li><a href="balance.jsf">My Posts</a></li>
+            <li><a href="mailto:tales.takemiya@gmail.com">Contact Me</a></li>
         </ul>
     </div>
     
-    <div id="search">
-            <h:form> 
-                    <fieldset>
-                        <h:inputText id="account-text" size="15" value='#{bank.account}'/>
-                        <h:inputSecret id="password-text" size="15" value='#{bank.password}'/>
-                        <h:commandButton id="search-submit" value="Login" action="#{bank.showBalance()}"/>
-                        
-                    </fieldset>
-            </h:form>
-    </div>
 </div>
 <!-- END OF MENU -->
-
 <!-- PAGE -->
 	<div id="page">
 		<div id="content">
@@ -79,19 +69,18 @@
 			<ul>
 				<li>
 					<h2>Tales Takemiya</h2>
-					<p>Was born in December 4th, 1986, Sao Paulo-Brazil.</p>
+					<p>Was born in December 4th, 1986, Sao Paulo-Brazil. Studied at Lindenwood University, St. Charles, MO.
+                                        He is a computer scientist.</p>
 				</li>
 				<li>
-					<h2>Pellenteque ornare </h2>
+					<h2>Usefull Links: </h2>
 					<ul>
-						<li><a href="#">Nec metus sed donec</a></li>
-						<li><a href="#">Magna lacus bibendum mauris</a></li>
-						<li><a href="#">Velit semper nisi molestie</a></li>
-						<li><a href="#">Eget tempor eget nonummy</a></li>
-						<li><a href="#">Nec metus sed donec</a></li>
-						<li><a href="#">Velit semper nisi molestie</a></li>
-						<li><a href="#">Eget tempor eget nonummy</a></li>
-						<li><a href="#">Nec metus sed donec</a></li>
+                                            <li><a href="http://github.com/talestk" target="_blank">My GitHub</a></li>
+						<li><a href="http://www.facebook.com/talestk" target="_blank">My Facebook</a></li>
+						<li><a href="http://twitter.com/Duckzin" target="_blank">My Twitter</a></li>
+						<li><a href="http://news.ycombinator.com" target="_blank">Hacker News</a></li>
+						<li><a href="http://stackoverflow.com" target="_blank">Stack Overflow</a></li>
+						<li><a href="http://rubyrogues.com" target="_blank">Ruby Rogues</a></li>
 					</ul>
 				</li>
 			</ul>

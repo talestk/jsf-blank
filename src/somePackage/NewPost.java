@@ -13,16 +13,16 @@ import javax.faces.bean.*;
  * @author talestk
  */
 @ManagedBean
+@RequestScoped
 public class NewPost {
     private String name;
     private String post;
     private String title;
     private Date date;
+    private PostsList list;
     
-    public void setName(String name) {
-        //JDBCConnPosts newName = new JDBCConnPosts();
-        //this.name = newName.getName();
-        this.name = name;
+    public void setName(String name2) {
+        this.name = name2;
     }
     
     public String getName() {
@@ -54,6 +54,8 @@ public class NewPost {
     }
     
     public void setConnection() throws SQLException {
-        PostsList list = new PostsList(name, post, date, title);
+        list = new PostsList(name, post, date, title);
     }
+    
 }
+

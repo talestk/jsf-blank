@@ -1,7 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
     <h:outputStylesheet library="css" name="style.css"  />
 <h:head><title>Tales Takemiya Web Page</title>
 </h:head>
@@ -48,11 +49,15 @@
 <!-- PAGE -->
 	<div id="page">
             <div id="content">
-		 <div class="post">
+		 <div class="post"  id="newPost">
                         <h2 class="title"><a href="#">Last Post: #{posts.getTitle()} </a></h2>
                         <p class="meta">#{posts.getDate()} Posted by <a href="#">#{posts.getName()}</a></p>
                         <div class="entry">
-                                <p>#{posts.getPost()}</p>
+                            <p>#{posts.getPost()}</p><br></br>
+                            <h:form>
+                                <h:commandButton value="Delete Post" action="delete_post.xhtml" type="submit">
+                                    </h:commandButton>
+                            </h:form>
                         </div>
 		  </div>
             
@@ -69,10 +74,15 @@
                                 </td>
                             </tr>
                             <tr><td><b>Title:</b></td><td><h:inputText styleClass="post_title" value="#{newPost.title}"/></td></tr>
-                            <tr><td><b>Post:</b></td><td><h:inputTextarea styleClass="post_box" value="#{newPost.post}"/></td></tr>
+                            <tr><td><b>Post:</b></td><td>
+                                    <h:inputTextarea styleClass="post_box" value="#{newPost.post}">
+                                        <f:validateLength maximum="3000"/> 
+                                    </h:inputTextarea>
+                                </td></tr>
                         
 
-                            <tr><td></td><td><h:commandButton value="POST" action="#{newPost.setConnection()}"/></td></tr>
+                            <tr><td></td><td><h:commandButton value="POST" action="#{newPost.setConnection()}">
+                                    </h:commandButton></td></tr>
                         </table>
                     </h:form>
                     </div>
@@ -86,16 +96,14 @@
 					<p>Your balance is:  $#{bank.getBalance()}</p>
 				</li>
 				<li>
-					<h2>Pellenteque ornare </h2>
+					<h2>Usefull Links: </h2>
 					<ul>
-						<li><a href="#">Nec metus sed donec</a></li>
-						<li><a href="#">Magna lacus bibendum mauris</a></li>
-						<li><a href="#">Velit semper nisi molestie</a></li>
-						<li><a href="#">Eget tempor eget nonummy</a></li>
-						<li><a href="#">Nec metus sed donec</a></li>
-						<li><a href="#">Velit semper nisi molestie</a></li>
-						<li><a href="#">Eget tempor eget nonummy</a></li>
-						<li><a href="#">Nec metus sed donec</a></li>
+                                            <li><a href="http://github.com/talestk" target="_blank">My GitHub</a></li>
+						<li><a href="http://www.facebook.com/talestk" target="_blank">My Facebook</a></li>
+						<li><a href="http://twitter.com/Duckzin" target="_blank">My Twitter</a></li>
+						<li><a href="http://news.ycombinator.com" target="_blank">Hacker News</a></li>
+						<li><a href="http://stackoverflow.com" target="_blank">Stack Overflow</a></li>
+						<li><a href="http://rubyrogues.com" target="_blank">Ruby Rogues</a></li>
 					</ul>
 				</li>
 			</ul>

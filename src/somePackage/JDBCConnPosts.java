@@ -14,6 +14,7 @@ public class JDBCConnPosts {
     private static String post;
     private static Date date;
     private static String name;
+    private static int id;
     
  
 	public JDBCConnPosts() throws SQLException {
@@ -35,7 +36,7 @@ public class JDBCConnPosts {
 		System.out.println("MySQL JDBC Driver Registered!");
 		Connection connection = null;
                 PreparedStatement ps = null;
-                String query = "SELECT * FROM posts ORDER BY date;";
+                String query = "SELECT * FROM posts ORDER BY id;";
                 ResultSet rs = null;
  
 		try {
@@ -53,6 +54,7 @@ public class JDBCConnPosts {
                         Date newDate = rs.getDate(3);
                         String newPost = rs.getString(2);
                         String newName = rs.getString(1);
+                        int newId = rs.getInt(5);
 //                        PostsArray ob = new PostsArray(newName, newPost, newDate, newTitle);
 //                        listOfPosts.add(ob);
                         
@@ -64,6 +66,7 @@ public class JDBCConnPosts {
                         setPost(newPost);
                         setDate(newDate);
                         setName(newName);
+                        setId(newId);
 
                     
                 }
@@ -76,7 +79,7 @@ public class JDBCConnPosts {
                 
                 connection.close();
 		if (connection != null) {
-			System.out.println("You made it, take control your database now!");
+			System.out.println("Connection from Post Done!");
 		} else {
 			System.out.println("Failed to make connection!");
 		}
@@ -119,6 +122,14 @@ public class JDBCConnPosts {
     
     public String getName() {
         return name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    private void setId(int newId) {
+        JDBCConnPosts.id = newId;
     }
 
 }

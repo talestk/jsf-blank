@@ -31,7 +31,7 @@ public class PostsDB {
 		System.out.println("MySQL JDBC Driver Registered!");
 		Connection connection = null;
                 PreparedStatement ps = null;
-                String query = "INSERT INTO posts VALUES(?,?,NOW(),?);";
+                String query = "INSERT INTO posts VALUES(?,?,NOW(),?, id);";
                 int updateQuery = 0;
                 ResultSet rs = null;
  

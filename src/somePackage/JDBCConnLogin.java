@@ -63,7 +63,7 @@ public class JDBCConnLogin {
                 
                 connection.close();
 		if (connection != null) {
-			System.out.println("You made it, take control your database now!");
+			System.out.println("Connection from Login Done!");
 		} else {
 			System.out.println("Failed to make connection!");
 		}

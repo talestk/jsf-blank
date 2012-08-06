@@ -4,9 +4,11 @@
  */
 package somePackage;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.sql.SQLException;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 
 /**
@@ -14,16 +16,20 @@ import javax.faces.bean.ManagedBean;
  * @author talestk
  */
 @ManagedBean
-public class Posts {
+@SessionScoped
+public class Posts implements Serializable{
     private static JDBCConnPosts posts;
     private static String title = null;
     private static String post = null;
     private static Date date = null;
     private static String name = null;
-   
+    private static int id;
+    private static JsoupHtmlParser parser = new JsoupHtmlParser();
     
     public String setAllPosts(int number) throws SQLException {
         posts = new JDBCConnPosts();
+        
+        id = posts.getId();
         
         switch(number) {
             case 1:
@@ -38,6 +44,9 @@ public class Posts {
             case 4:
                 name = posts.getName();
                 return name;
+            case 5:
+                return "posts.getId()";
+                
         }
         
         return "Couldn't find DB!";
