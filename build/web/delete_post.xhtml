@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:outputStylesheet library="css" name="style.css"  />
+    <h:head>
+        <title>Wrong Password</title>
+    </h:head>
+    <body>
+        <table>
+            <b id="#{deletingPost.deletePost()}"></b>
+        <b id="wrongMSGHeader">Post Deleted!</b>
+        <br></br>
+        <i id='wrongMSG'>Click on back to return to home page!</i>
+        <br></br>
+         
+        <div id="backbutton">
+            <h:form>
+                <h:commandButton value="back" action="balance"></h:commandButton>
+            </h:form>
+        </div>
+        </table>
+    </body>
+</html>
