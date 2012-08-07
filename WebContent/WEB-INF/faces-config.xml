@@ -10,4 +10,51 @@
         start and end tags.
         
         From JSF 2.0 tutorial at http://www.coreservlets.com/JSF-Tutorial/jsf2/ -->
+        
+        <managed-bean>
+            <managed-bean-name>posts</managed-bean-name>
+            <managed-bean-class>
+                controller.Posts
+            </managed-bean-class>
+            <managed-bean-scope>request</managed-bean-scope>
+       </managed-bean>
+<!--Managing login -->
+    <navigation-rule>
+        <from-view-id>/login.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>balance</from-outcome>
+            <if>#{bank.getAccount() == "tales"}</if>
+                <to-view-id>/balance.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>balance</from-outcome>
+            <if>#{bank.getAccount() != "tales"}</if>
+                <to-view-id>/wrongPassword.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <!--managing Posts-->
+<!--       <navigation-rule>
+        <from-view-id>/page-a.xhtml</from-view-id>
+        <from-view-id>/login.xhtml</from-view-id>
+        <from-view-id>/about.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login.jsf</from-outcome>
+            <if>#{bank.getAccount() != "tales" }</if>
+                <to-view-id>/login.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>login.jsf</from-outcome>
+            <if>#{bank.getAccount() == "tales" }</if>
+                <to-view-id>/balance.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>-->
+            
+    <navigation-rule>
+        <from-view-id>/index.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>page-a</from-outcome>
+            <to-view-id>/page-a.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
